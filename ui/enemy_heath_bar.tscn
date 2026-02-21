@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cktwlo61cinst"]
+
+[ext_resource type="Texture2D" uid="uid://ctg02dctkhnah" path="res://ui/lifebar_fill.png" id="1_sf2a8"]
+
+[node name="Enemy_health_bar" type="Node2D"]
+scale = Vector2(2.63, 2.63)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 10.0
+value = 10.0
+texture_progress = ExtResource("1_sf2a8")
+tint_under = Color(0.39607844, 0.20392157, 1, 1)
+tint_progress = Color(1, 0.15294118, 0.3647059, 1)

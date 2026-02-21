@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1ibgkqo416pg"]
+
+[ext_resource type="Script" uid="uid://yf6uvo5mt4lb" path="res://TestBed/heal_bar_test_bed.gd" id="1_duiaf"]
+[ext_resource type="PackedScene" uid="uid://diyhe7h3uxyw2" path="res://ui/health_bar.tscn" id="2_wal8x"]
+
+[node name="HealBarTestBed" type="Node2D"]
+script = ExtResource("1_duiaf")
+
+[node name="Add" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 333.0
+offset_right = 507.0
+offset_bottom = 493.0
+text = "1+"
+
+[node name="sub" type="Button" parent="."]
+offset_left = 660.0
+offset_top = 337.0
+offset_right = 1157.0
+offset_bottom = 497.0
+text = "1-
+"
+
+[node name="HealthBar" parent="." instance=ExtResource("2_wal8x")]
+
+[connection signal="button_down" from="Add" to="." method="_on_add_button_down"]
+[connection signal="button_down" from="sub" to="." method="_on_sub_button_down"]

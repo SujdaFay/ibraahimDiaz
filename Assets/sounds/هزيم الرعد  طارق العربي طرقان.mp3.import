@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ch46j3a6dtw1y"
+path="res://.godot/imported/هزيم الرعد  طارق العربي طرقان.mp3-292b1502c6e6787b6f9326185b1fce84.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/هزيم الرعد  طارق العربي طرقان.mp3"
+dest_files=["res://.godot/imported/هزيم الرعد  طارق العربي طرقان.mp3-292b1502c6e6787b6f9326185b1fce84.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

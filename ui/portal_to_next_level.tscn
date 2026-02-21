@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://xq85p3rfpd05"]
+
+[ext_resource type="Script" uid="uid://mjrh2wskokff" path="res://ui/portal_to_next_level.gd" id="1_mhke3"]
+[ext_resource type="Texture2D" uid="uid://cglmc7qq13l6d" path="res://ui/portal.png" id="1_nnd8x"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mhke3"]
+radius = 58.0
+height = 196.0
+
+[node name="portal_to_next_level" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_mhke3")
+
+[node name="Portal" type="Sprite2D" parent="."]
+texture = ExtResource("1_nnd8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_mhke3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
