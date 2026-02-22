@@ -10,6 +10,8 @@ func _physics_process(delta: float) -> void:
 
 func simpleAttack()->void:
 	var distance=position.distance_to(PLAYER.position)
+	if PLAYER.death:
+		return
 	if distance < attack_radios and health>0:
 		$AnimationTree.set("parameters/AttackOneShot/request",AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 
@@ -17,4 +19,3 @@ func simpleAttack()->void:
 
 func _on_attack_timer_timeout() -> void:
 	simpleAttack()
-	

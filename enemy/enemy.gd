@@ -25,7 +25,11 @@ func movements(delta:float)->void:
 			velocity.y += gracity
 		move_and_slide()
 		return
-		
+	
+	if PLAYER==null:
+		return
+	
+	
 	var distance=position.distance_to(PLAYER.position)
 	var direction=(PLAYER.position-position).normalized()
 	

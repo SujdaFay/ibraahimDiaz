@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://dthdleusxg86u"]
+
+[ext_resource type="Script" uid="uid://jril67nktoud" path="res://ui/ui_one.gd" id="1_4vofl"]
+[ext_resource type="PackedScene" uid="uid://b55oojtpcwmb7" path="res://Levels/level_1.tscn" id="2_dswlw"]
+[ext_resource type="Texture2D" uid="uid://bahgtgtwlvk2t" path="res://ui/Starry night Image.png" id="3_h4ie6"]
+[ext_resource type="AudioStream" uid="uid://ch46j3a6dtw1y" path="res://Assets/sounds/هزيم الرعد  طارق العربي طرقان.mp3" id="4_ynprq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_akiu3"]
+bg_color = Color(0.6, 0.6, 0.6, 0.101960786)
+shadow_color = Color(0.99990577, 0.45250565, 0.38405755, 0.6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r407t"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+bg_color = Color(0.2159017, 0.21590173, 0.21590161, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0.49253386, 0.42365974, 0.8908447, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uviys"]
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="death_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vofl")
+level1 = ExtResource("2_dswlw")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.23137255, 0.30588236, 0.32941177, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.23921569)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -215.0
+offset_right = 839.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_h4ie6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 36.0
+offset_right = 1111.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = SubResource("StyleBoxFlat_akiu3")
+text = "You Have Died 🫨🫨🫨🫨"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 327.0
+offset_right = 875.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 96
+theme_override_styles/normal = SubResource("StyleBoxFlat_r407t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uviys")
+text = "Play Again"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ynprq")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

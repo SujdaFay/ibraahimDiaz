@@ -23,8 +23,9 @@ func _physics_process(delta: float) -> void:
 	
 	if PlayerState.health==0:
 		death=true
-	#if death:
-		#return
+	if death:
+		anim_state.travel("death")
+		return
 	is_on_floor()
 	if not PlayerState.death:
 		movement()
@@ -79,3 +80,10 @@ func hit()->void:
 	if $DamageTimer.is_stopped():
 		PlayerState.healthDec()
 		health_bar.value=PlayerState.health
+
+
+func deathStae()->void:
+	death=false
+	PlayerState.health=10
+	
+	get_tree().change_scene_to_file("res://ui/death_screen.tscn")
