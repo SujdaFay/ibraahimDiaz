@@ -83,7 +83,7 @@ func hit()->void:
 
 
 func deathStae()->void:
-	death=false
+	death=falsed
 	PlayerState.health=10
 	
 	get_tree().change_scene_to_file("res://ui/death_screen.tscn")
